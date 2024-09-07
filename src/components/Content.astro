@@ -1,0 +1,47 @@
+---
+---
+
+<main class="content">
+    <h2>Contenido principal</h2>
+    <p>Aquí puedes agregar el contenido de tu portafolio, como proyectos, experiencia, etc.</p>
+</main>
+
+<style>
+
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        overflow-x: hidden; /* Evitar desbordamiento horizontal */
+        width: 100%;
+    }
+    /* # # # # # Desktop y Celular # # # # # */
+
+    .content {
+        width: 100%;
+        background-color: #2a2d38;
+        padding: 1rem;
+        border-radius: 1rem;
+        /* margin: 10px; */
+    }   
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: var(--font-size-large); /* Usa la variable para el tamaño de encabezados */
+    }
+
+    p {
+        font-size: var(--font-size-base); /* Usa la variable base para el tamaño del texto */
+        line-height: 1.6;
+    }
+
+    /* # # # # # Desktop # # # # #  */
+    @media (min-width: 768px) {
+        .content {
+            width: 80%;
+        }   
+    }
+</style>

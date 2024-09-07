@@ -1,0 +1,85 @@
+---
+---
+
+<main class="sidebar">
+    <div class="myCard">
+        <img src="/fotoDePerfil.jpg" alt="Foto de perfil" class="profile-img">
+        <h2>Charles Anthony</h2>
+        <span class="role">Ingeniero en computacion administrativa</span>
+    </div>
+</main>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        overflow-x: hidden; /* Evitar desbordamiento horizontal */
+        width: 100%;
+    }
+
+    /* # # # # # (Desktop y Celular) # # # # #  */
+
+    .sidebar {
+        background-color: #21242c;
+        border-radius: 1rem;
+        /* margin: 10px; */
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .myCard img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    h2 {
+        margin: 1rem 0;
+        font-size: var(--font-size-large); /* Tamaño del encabezado (nombre) */
+    }
+
+    .role {
+        font-size: var(--font-size-small); /* Tamaño para el rol */
+        color: #999;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    /* # # # # # Desktop # # # # #  */
+    @media (min-width: 768px) {
+        .sidebar {
+            width: 20%;
+            min-width: 200px;
+        }
+
+        .content {
+            width: 75%;
+            margin-left: 25%;
+        }
+    }
+    
+    /* # # # # # Celular # # # # #  */
+    @media (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            width: 100%;
+        }
+
+        .myCard img {
+            max-width: 150px; /* Limita el tamaño de la imagen en móviles */
+            margin: 0 auto;
+            display: block;
+        }
+    }
+</style>
