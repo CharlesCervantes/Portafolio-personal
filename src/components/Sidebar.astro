@@ -1,16 +1,17 @@
----
----
-
 <main class="sidebar">
     <div class="myCard">
-        <img src="/fotoDePerfil.jpg" alt="Foto de perfil" class="profile-img">
-        <h2>Charles Anthony</h2>
-        <span class="role">Ingeniero en computacion administrativa</span>
+        <div class="divImg">
+            <img src="/fotoDePerfil.jpg" alt="Foto de perfil" class="profile-img">
+        </div>
+
+        <div class="divName">
+            <h2>Charles Anthony</h2>
+            <span class="role">Ingeniero en computacion administrativa</span>
+        </div>
     </div>
 </main>
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -18,68 +19,93 @@
     }
 
     html, body {
-        overflow-x: hidden; /* Evitar desbordamiento horizontal */
+        overflow-x: hidden;
         width: 100%;
     }
-
-    /* # # # # # (Desktop y Celular) # # # # #  */
 
     .sidebar {
         background-color: #21242c;
         border-radius: 1rem;
-        /* margin: 10px; */
         padding: 1rem;
-        width: 100%;
-    }
-
-    .myCard img {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        border-radius: 50%;
-        object-fit: cover;
     }
 
     h2 {
         margin: 1rem 0;
-        font-size: var(--font-size-large); /* Tamaño del encabezado (nombre) */
     }
 
     .role {
-        font-size: var(--font-size-small); /* Tamaño para el rol */
+        font-size: var(--font-size-xs);
         color: #999;
         display: block;
         margin-bottom: 1rem;
     }
 
-    /* # # # # # Desktop # # # # #  */
+    /* Computadora */
     @media (min-width: 768px) {
-        .sidebar {
-            width: 20%;
-            min-width: 200px;
+        h2 {
+            font-size: var(--font-size-xs);
+            width: 100%;
+            justify-content: center;
+            display: flex;
         }
 
-        .content {
-            width: 75%;
-            margin-left: 25%;
-        }
-    }
-    
-    /* # # # # # Celular # # # # #  */
-    @media (max-width: 768px) {
-        .sidebar {
+        .role {
             width: 100%;
-            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
         }
 
-        .content {
-            width: 100%;
+        .sidebar {
+            width: 20%; /* Sidebar ocupa el 20% en pantallas grandes */
+            min-width: 200px; /* Mínimo tamaño para sidebar */
         }
 
         .myCard img {
-            max-width: 150px; /* Limita el tamaño de la imagen en móviles */
-            margin: 0 auto;
-            display: block;
+            max-width: 60%;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .divImg {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    /* Celular */
+    @media (max-width: 768px) {
+
+        .sidebar {
+            width: 100%; /* Sidebar ocupa el 100% en pantallas pequeñas */
+            margin-bottom: 1rem;
+        }
+
+        .myCard img {
+            max-width: 90%;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .divImg {
+            display: flex;
+            width: 20%;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .myCard {
+            display: flex;
+        }
+
+        .divName {
+            /* display: flex; */
+            /* justify-items: flex-start; */
         }
     }
 </style>
