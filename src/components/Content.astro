@@ -3,13 +3,19 @@ const title = 'Portfolio'
 ---
 
 <main class="content">
-    <nav class="menu">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="content-container">
+        <header>
+            <h1>{title}</h1>
+            <div class="underline"></div>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
 </main>
 
 <style>
@@ -25,30 +31,64 @@ const title = 'Portfolio'
     }
 
     .content {
-        background-color: #2a2d38;
+        background-color: #282f30;
         border-radius: 1rem;
     }
 
-    .menu {
-        display: flex;
-        justify-content: flex-end; /* Alinea el menú hacia la derecha */
-        background-color: #1e2028;
-        padding: 0.75rem;
-        margin-left: auto; /* Empuja el menú hacia la derecha */
-        border-bottom-left-radius: 0.7rem;
-        max-width: fit-content; /* Solo ocupa el espacio necesario */
+    /* Media query para pantallas grandes */
+    @media (min-width: 768px) {
+        .content {
+            width: 80%; /* El contenido ocupa el 80% del ancho */
+        }
 
-        ul {
+        .content-container {
+            position: relative; /* Necesario para que el nav se posicione dentro del contenedor */
+            display: flex;
+            flex-direction: column;
+            padding: 1rem; /* Mantén algo de padding alrededor del contenedor */
+        }
+
+        header {
+            margin-bottom: 2rem; /* Añade separación entre el header y el contenido siguiente */
+
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+            }
+
+            .underline {
+                width: 40px;
+                height: 4px;
+                background-color: #ffc107;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .menu {
+            position: absolute; /* Posiciona el nav de manera absoluta */
+            top: 0; /* Quita la separación desde la parte superior */
+            right: 0; /* Alinea el nav con el borde derecho */
+            margin: 0; /* Elimina cualquier margen del nav */
+            padding: 0.5rem 1rem; /* Mantén el padding interno */
+            background-color: #1b1f21;
+            border-radius: 0 0 0 0.7rem;
+            max-width: fit-content;
+        }
+
+        .menu ul {
             display: flex;
             list-style: none;
             gap: 1.5rem; /* Espacio entre los elementos */
+            margin: 0; /* Asegura que no haya margen en ul */
+            padding: 0; /* Asegura que no haya padding en ul */
         }
 
-        li {
+        .menu li {
             margin: 0;
         }
 
-        a {
+        .menu a {
             color: #ccc;
             text-decoration: none;
             font-size: 1rem;
@@ -58,23 +98,79 @@ const title = 'Portfolio'
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        a:hover {
-            background-color: #ffc107; /* Color amarillo de fondo al hacer hover */
-            color: #000;
-        }
-    }
-
-    /* Media query para pantallas grandes */
-    @media (min-width: 768px) {
-        .content {
-            width: 80%; /* El contenido ocupa el 80% del ancho */
+        .menu a:hover {
+            background-color: #2c3133; 
+            color: #ffc107;
         }
     }
 
     /* Media query para pantallas pequeñas */
     @media (max-width: 768px) {
-        .content {
-            width: 100%; /* El contenido ocupa el 100% en pantallas pequeñas */
+    .content {
+        width: 100%; /* El contenido ocupa el 100% en pantallas pequeñas */
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0; /* Elimina todo el padding del contenedor en pantallas pequeñas */
+    }
+
+    header {
+        margin-bottom: 2rem; /* Añade separación entre el header y el contenido siguiente */
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin: 1rem;
+        }
+
+        .underline {
+            width: 40px;
+            height: 4px;
+            background-color: #ffc107;
+            margin-top: 0.5rem;
+            margin: 1rem;
         }
     }
+
+    .menu {
+        display: flex;
+        padding: 0.5rem 1rem; /* Mantén el padding interno del menú */
+        background-color: #1b1f21;
+        border-radius: 0 0 0.7rem 0; /* Solo la esquina inferior izquierda redondeada */
+        width: 100%; /* El menú ocupa el 100% del ancho */
+        margin: 0; /* Elimina cualquier margen del menú */
+        max-width: fit-content;
+    }
+
+    .menu ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem; /* Espacio entre los elementos */
+        margin: 0; /* Asegura que no haya margen en ul */
+        padding: 0; /* Asegura que no haya padding en ul */
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .menu a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        display: block;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu a:hover {
+        background-color: #2c3133;
+        color: #ffc107;
+    }
+}
+
 </style>
