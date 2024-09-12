@@ -1,6 +1,15 @@
+---
+const title = 'Portfolio'
+---
+
 <main class="content">
-    <h2>Contenido principal</h2>
-    <p>Aquí puedes agregar el contenido de tu portafolio, como proyectos, experiencia, etc.</p>
+    <nav class="menu">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
 </main>
 
 <style>
@@ -17,18 +26,42 @@
 
     .content {
         background-color: #2a2d38;
-        padding: 1rem;
         border-radius: 1rem;
     }
 
-    h2 {
-        margin-bottom: 1rem;
-        font-size: var(--font-size-large);
-    }
+    .menu {
+        display: flex;
+        justify-content: flex-end; /* Alinea el menú hacia la derecha */
+        background-color: #1e2028;
+        padding: 0.75rem;
+        margin-left: auto; /* Empuja el menú hacia la derecha */
+        border-bottom-left-radius: 0.7rem;
+        max-width: fit-content; /* Solo ocupa el espacio necesario */
 
-    p {
-        font-size: var(--font-size-base);
-        line-height: 1.6;
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem; /* Espacio entre los elementos */
+        }
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            display: block;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ffc107; /* Color amarillo de fondo al hacer hover */
+            color: #000;
+        }
     }
 
     /* Media query para pantallas grandes */
