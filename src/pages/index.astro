@@ -16,23 +16,21 @@ import Content from '../components/Content.astro'
 	/* Estilos comunes */
 	main {
 		margin: auto;
-        max-width: 1200px; /* Limita el ancho máximo para evitar desbordamiento */
 		padding: 1rem;
 		color: white;
-		font-size: 20px;
-		line-height: 1.6;
 	}
 
 	/* Estilos para pantallas grandes (Desktop) */
 	@media (min-width: 768px) {
 		.main-layout {
 			display: flex;
-			flex-direction: row; /* Coloca el Sidebar y el Content lado a lado */
+			flex-direction: row; 
 			flex-wrap: nowrap;
-			gap: 1rem; /* Espacio entre Sidebar y Content */
-			width: 90%;
-			max-width: 100vw; /* Limita el ancho máximo para evitar desbordamiento */
-			margin: 0 auto; /* Centra el contenedor */
+			gap: 1rem; 
+			/* width: 90%; */
+			max-width: 100vw; 
+			margin: 0 auto; 
+			justify-content: space-between;
 		}
 	}
 
